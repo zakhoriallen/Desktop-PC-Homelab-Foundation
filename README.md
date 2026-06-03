@@ -194,6 +194,12 @@ It backs up:
 - Add a restore test for the backup archive.
 - Add more services only after the foundation stays stable.
 
+## Next Planned Phases
+
+- Phase 4: Security monitoring with Wazuh. See [docs/phase-4-wazuh-security-monitoring.md](docs/phase-4-wazuh-security-monitoring.md).
+- Phase 4 starter workflow: Linux, SSH, and Docker log review. See [docs/security-monitoring.md](docs/security-monitoring.md) and [docs/phase-4-checklist.md](docs/phase-4-checklist.md).
+- Phase 5: Windows Server and Active Directory lab. See [docs/phase-5-windows-server-active-directory.md](docs/phase-5-windows-server-active-directory.md).
+
 ## Resume Bullet Examples
 
 - Built a private desktop homelab using VirtualBox, Ubuntu Server, Docker Compose, Tailscale, UFW, and self-hosted infrastructure services.
