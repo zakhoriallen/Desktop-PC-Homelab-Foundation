@@ -1,0 +1,10 @@
+- Core Services:
+    - Portainer:
+        href: https://LAN_VM_IP:9443
+        description: Docker management
+    - Uptime Kuma:
+        href: http://LAN_VM_IP:3001
+        description: Uptime monitoring
+    - AdGuard Home:
+        href: http://LAN_VM_IP:8080
+        description: DNS filtering

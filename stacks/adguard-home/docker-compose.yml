@@ -1,0 +1,17 @@
+services:
+  adguard-home:
+    image: adguard/adguardhome:latest
+    container_name: adguard-home
+    restart: unless-stopped
+    ports:
+      - "${ADGUARD_DNS_BIND_IP:-0.0.0.0}:53:53/tcp"
+      - "${ADGUARD_DNS_BIND_IP:-0.0.0.0}:53:53/udp"
+      - "3000:3000/tcp"
+      - "8080:80/tcp"
+    volumes:
+      - adguard_work:/opt/adguardhome/work
+      - adguard_conf:/opt/adguardhome/conf
+
+volumes:
+  adguard_work:
+  adguard_conf:
