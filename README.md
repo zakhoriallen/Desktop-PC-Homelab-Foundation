@@ -100,6 +100,36 @@ Completed:
 - Verified backup archive contents.
 - Saved Phase 2 proof screenshots for Tailscale, UFW, and backups.
 
+## Phase 4: Lightweight Security Monitoring
+
+Phase 4 begins the blue-team layer of this homelab. Wazuh is not installed yet. The current focus is learning how to review the logs already available from Ubuntu, SSH, and Docker.
+
+This phase documents:
+
+- SSH service status checks.
+- SSH log review from the last 24 hours.
+- Searches for failed and accepted SSH logins.
+- Docker container status review.
+- Docker logs for Portainer, Uptime Kuma, AdGuard Home, and Homepage.
+- Normal vs suspicious activity examples.
+- Screenshot evidence for basic security monitoring practice.
+
+Key commands include:
+
+```bash
+sudo systemctl status ssh --no-pager
+sudo journalctl -u ssh --since "24 hours ago"
+sudo journalctl -u ssh --since "24 hours ago" | grep -i "failed"
+sudo journalctl -u ssh --since "24 hours ago" | grep -i "accepted"
+docker ps
+docker logs --tail 50 portainer
+docker logs --tail 50 uptime-kuma
+docker logs --tail 50 adguard-home
+docker logs --tail 50 homepage
+```
+
+Detailed notes are available in [docs/security-monitoring.md](docs/security-monitoring.md) and [docs/phase-4-checklist.md](docs/phase-4-checklist.md).
+
 ## Screenshots
 
 | Proof | Screenshot |
@@ -184,6 +214,7 @@ It backs up:
 - Remote access uses Tailscale.
 - Passwords, SSH keys, tokens, and secrets are not stored in this repository.
 - Router DNS has not been pointed to AdGuard Home yet.
+- Public documentation uses placeholders for private IPs, usernames, emails, and sensitive details.
 
 ## Future Improvements
 
@@ -196,8 +227,8 @@ It backs up:
 
 ## Next Planned Phases
 
-- Phase 4: Security monitoring with Wazuh. See [docs/phase-4-wazuh-security-monitoring.md](docs/phase-4-wazuh-security-monitoring.md).
-- Phase 4 starter workflow: Linux, SSH, and Docker log review. See [docs/security-monitoring.md](docs/security-monitoring.md) and [docs/phase-4-checklist.md](docs/phase-4-checklist.md).
+- Continue Phase 4 with lightweight Linux, SSH, and Docker log review. See [docs/security-monitoring.md](docs/security-monitoring.md) and [docs/phase-4-checklist.md](docs/phase-4-checklist.md).
+- Later Phase 4 expansion: research Wazuh after the lightweight baseline is documented. See [docs/phase-4-wazuh-security-monitoring.md](docs/phase-4-wazuh-security-monitoring.md).
 - Phase 5: Windows Server and Active Directory lab. See [docs/phase-5-windows-server-active-directory.md](docs/phase-5-windows-server-active-directory.md).
 
 ## Resume Bullet Examples

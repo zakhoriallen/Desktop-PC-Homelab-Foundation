@@ -1,57 +1,77 @@
 # Phase 4 Checklist
 
-## Public Repo Review
+Phase 4 starts with lightweight security monitoring using existing Ubuntu and Docker logs. Wazuh is intentionally deferred until the baseline workflow is documented and understood.
 
-- [x] Final GitHub safety scan completed
-- [x] No backup archives found
-- [x] No `.env` file found
-- [x] No private keys found
-- [x] No secrets directory found
-- [x] No shared password found
-- [x] No real LAN IP found
-- [x] No real Tailscale IP found
-- [x] No account email found
-- [ ] GitHub README reviewed in browser
-- [ ] GitHub screenshots reviewed in browser
-- [ ] GitHub docs links reviewed in browser
-- [ ] Repository made public if clean
+## Lightweight Log Review Workflow
 
-## Security Monitoring Prep
+- [ ] SSH service status documented
+- [ ] SSH logs reviewed
+- [ ] Failed login search documented
+- [ ] Accepted login search documented
+- [ ] Docker container status reviewed
+- [ ] Docker service logs reviewed
+- [ ] Normal activity examples documented
+- [ ] Suspicious activity examples documented
+- [ ] Screenshots saved
+- [ ] README updated
+- [ ] Commit Phase 4 lightweight monitoring workflow
 
-- [ ] Confirm current services are healthy in Uptime Kuma
-- [ ] Run `docker ps`
-- [ ] Run a fresh backup
-- [ ] Verify backup archive contents
-- [ ] Check memory with `free -h`
-- [ ] Check disk with `df -h`
-- [ ] Check load/processes with `htop`
+## Commands To Run
 
-## Log Review
+Check SSH service:
 
-- [ ] Check SSH service status
-- [ ] Review SSH logs from the last 24 hours
-- [ ] Review system logs from the last 24 hours
-- [ ] Review Docker logs for Portainer
-- [ ] Review Docker logs for Uptime Kuma
-- [ ] Review Docker logs for AdGuard Home
-- [ ] Review Docker logs for Homepage
-- [ ] Document normal login behavior
-- [ ] Document any failed login attempts
+```bash
+sudo systemctl status ssh --no-pager
+```
 
-## Wazuh Research
+Review SSH logs from last 24 hours:
 
-- [ ] Research lightweight Wazuh deployment options
-- [ ] Confirm VM has enough RAM/CPU/disk
-- [ ] Decide current VM vs separate security VM
-- [ ] Document expected ports and access method
-- [ ] Do not deploy until backup is verified
+```bash
+sudo journalctl -u ssh --since "24 hours ago"
+```
 
-## Documentation
+Search for failed SSH attempts:
 
-- [x] Create `docs/security-monitoring.md`
-- [x] Create `docs/phase-4-checklist.md`
-- [ ] Add screenshots
-- [ ] Update README with Phase 4 progress after log review
-- [ ] Add troubleshooting notes
-- [ ] Commit Phase 4 documentation changes
+```bash
+sudo journalctl -u ssh --since "24 hours ago" | grep -i "failed"
+```
 
+Search for accepted SSH logins:
+
+```bash
+sudo journalctl -u ssh --since "24 hours ago" | grep -i "accepted"
+```
+
+Review running Docker containers:
+
+```bash
+docker ps
+```
+
+Review service logs:
+
+```bash
+docker logs --tail 50 portainer
+docker logs --tail 50 uptime-kuma
+docker logs --tail 50 adguard-home
+docker logs --tail 50 homepage
+```
+
+Follow logs live:
+
+```bash
+docker logs -f --tail 50 portainer
+```
+
+## Documentation Rules
+
+- Use placeholders for real IPs, usernames, emails, and sensitive details.
+- Do not store passwords, tokens, API keys, SSH keys, private keys, or `.env` files in the repo.
+- Do not commit backup archives.
+- Save screenshots only after checking that sensitive details are hidden or acceptable for public GitHub.
+
+## Suggested Commit Message
+
+```text
+Add Phase 4 lightweight security monitoring workflow
+```
