@@ -12,6 +12,7 @@ The goal is to learn what normal activity looks like before adding a larger secu
 - Review Docker container status.
 - Review Docker service logs.
 - Verify Uptime Kuma email alerting.
+- Check VM resources before deciding whether to install Wazuh.
 - Document examples of normal and suspicious activity.
 - Save screenshots for proof of work.
 - Keep all IP addresses, usernames, emails, passwords, tokens, and keys out of public documentation.
@@ -140,6 +141,38 @@ Suspicious alerting activity:
 - SMTP authentication failures repeat in logs.
 - Alerts are disabled without a documented reason.
 
+## Wazuh Readiness Resource Check
+
+Wazuh has not been installed yet. Before adding it, the next decision is whether the current VM has enough CPU, RAM, and disk space for Wazuh or whether Phase 4 should stay lightweight for now.
+
+Run these commands before making that decision:
+
+```bash
+free -h
+df -h
+docker stats --no-stream
+htop
+```
+
+What to review:
+
+- Available memory after the existing Docker services are running.
+- Available disk space for Wazuh indexes, logs, and future growth.
+- Current container CPU and memory usage.
+- Overall load and active processes in `htop`.
+
+Evidence screenshot:
+
+```text
+docs/screenshots/15-resource-check-before-wazuh.png
+```
+
+Decision options:
+
+- Continue lightweight Phase 4 monitoring if resources are tight.
+- Increase VM resources before installing Wazuh.
+- Deploy Wazuh later on a separate security monitoring VM.
+
 ### Normal Docker Activity
 
 Examples of normal Docker activity:
@@ -185,6 +218,7 @@ Recommended screenshots:
 - Docker logs for each core service.
 - Uptime Kuma showing monitored services up.
 - Uptime Kuma notification test email with the real address redacted.
+- Wazuh readiness resource check before installation.
 
 Redact or avoid capturing:
 
@@ -237,6 +271,8 @@ Before installing Wazuh:
 - [x] Test email received
 - [x] Evidence screenshot saved/redacted
 - [x] Redacted notification screenshot added to repository
+- [x] Wazuh readiness resource check documented
+- [x] Resource check screenshot saved/redacted
 - [ ] Normal activity examples documented
 - [ ] Suspicious activity examples documented
 - [ ] Screenshots saved

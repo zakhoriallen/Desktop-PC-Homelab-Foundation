@@ -112,6 +112,7 @@ This phase documents:
 - Docker container status review.
 - Docker logs for Portainer, Uptime Kuma, AdGuard Home, and Homepage.
 - Uptime Kuma Email SMTP alerting proof with credentials omitted.
+- Wazuh readiness resource checks before installing a heavier monitoring stack.
 - Normal vs suspicious activity examples.
 - Screenshot evidence for basic security monitoring practice.
 
@@ -127,6 +128,10 @@ docker logs --tail 50 portainer
 docker logs --tail 50 uptime-kuma
 docker logs --tail 50 adguard-home
 docker logs --tail 50 homepage
+free -h
+df -h
+docker stats --no-stream
+htop
 ```
 
 Detailed notes are available in [docs/security-monitoring.md](docs/security-monitoring.md) and [docs/phase-4-checklist.md](docs/phase-4-checklist.md).
@@ -138,6 +143,12 @@ Alerting proof completed:
 - Test email received in inbox.
 - Evidence screenshot filename: `docs/screenshots/14-uptime-kuma-notification-test.png`.
 - Documentation uses `EMAIL_ADDRESS` and `APP_PASSWORD_REDACTED` placeholders instead of credential values.
+
+Wazuh readiness note:
+
+- Wazuh has not been installed yet.
+- Resource checks were documented before making the install decision.
+- The next decision is whether the VM has enough CPU, RAM, and disk for Wazuh or whether to keep Phase 4 lightweight.
 
 ## Screenshots
 
@@ -152,6 +163,7 @@ Alerting proof completed:
 | UFW firewall rules | ![UFW status numbered](docs/screenshots/07-ufw-status-numbered.png) |
 | Backup script output | ![Backup script output](docs/screenshots/08-backup-script-output.png) |
 | Uptime Kuma notification test | ![Uptime Kuma notification test](docs/screenshots/14-uptime-kuma-notification-test.png) |
+| Wazuh readiness resource check | ![Wazuh readiness resource check](docs/screenshots/15-resource-check-before-wazuh.png) |
 
 ## Repository Layout
 

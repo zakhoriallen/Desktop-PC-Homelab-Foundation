@@ -15,6 +15,8 @@ Phase 4 starts with lightweight security monitoring using existing Ubuntu and Do
 - [x] Test email received
 - [x] Evidence screenshot saved/redacted
 - [x] Redacted notification screenshot added to repository
+- [x] Wazuh readiness resource check documented
+- [x] Resource check screenshot saved/redacted
 - [ ] Normal activity examples documented
 - [ ] Suspicious activity examples documented
 - [ ] Screenshots saved
@@ -66,6 +68,26 @@ Follow logs live:
 
 ```bash
 docker logs -f --tail 50 portainer
+```
+
+## Wazuh Readiness Resource Check
+
+Wazuh has not been installed yet. The next decision is whether the current VM has enough CPU, RAM, and disk space for Wazuh or whether Phase 4 should stay lightweight.
+
+- [x] Memory checked with `free -h`
+- [x] Disk checked with `df -h`
+- [x] Container resource usage checked with `docker stats --no-stream`
+- [ ] Process/load view checked with `htop`
+- [x] Evidence screenshot saved/redacted as `docs/screenshots/15-resource-check-before-wazuh.png`
+- [ ] Decide whether to install Wazuh later, increase VM resources, or keep Phase 4 lightweight
+
+Commands:
+
+```bash
+free -h
+df -h
+docker stats --no-stream
+htop
 ```
 
 ## Alerting Proof
