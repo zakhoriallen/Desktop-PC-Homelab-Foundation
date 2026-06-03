@@ -5,14 +5,14 @@
 - Confirmed VM `homelab-ubuntu` is running in VirtualBox.
 - Confirmed VM is using bridged networking.
 - Confirmed VM IP: `LAN_VM_IP`.
-- Confirmed SSH access for user `khoto`.
+- Confirmed SSH access for user `USERNAME`.
 - Added key-based SSH access from Windows for setup automation.
 - Confirmed Docker Engine is installed: `Docker version 29.5.2`.
 - Confirmed Docker Compose plugin is installed: `Docker Compose version v5.1.4`.
-- Confirmed user `khoto` is in the `docker` group.
+- Confirmed user `USERNAME` is in the `docker` group.
 - Ran `docker run --rm hello-world` successfully.
-- Created `/home/khoto/homelab` folder structure.
-- Copied README, docs, scripts, and Docker stacks to `/home/khoto/homelab`.
+- Created `/home/USERNAME/homelab` folder structure.
+- Copied README, docs, scripts, and Docker stacks to `/home/USERNAME/homelab`.
 - Deployed Portainer.
 - Deployed Uptime Kuma.
 - Deployed AdGuard Home.

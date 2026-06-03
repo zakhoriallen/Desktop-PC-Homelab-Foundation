@@ -11,6 +11,7 @@ The goal is to learn what normal activity looks like before adding a larger secu
 - Search for failed and accepted SSH logins.
 - Review Docker container status.
 - Review Docker service logs.
+- Verify Uptime Kuma email alerting.
 - Document examples of normal and suspicious activity.
 - Save screenshots for proof of work.
 - Keep all IP addresses, usernames, emails, passwords, tokens, and keys out of public documentation.
@@ -23,6 +24,8 @@ TAILSCALE_VM_IP
 USERNAME
 REMOTE_IP
 SERVICE_NAME
+EMAIL_ADDRESS
+APP_PASSWORD_REDACTED
 ```
 
 ## SSH Log Review
@@ -105,6 +108,38 @@ Follow logs live:
 docker logs -f --tail 50 portainer
 ```
 
+## Uptime Kuma Alerting Proof
+
+Uptime Kuma email notifications were configured with Gmail SMTP and a Google App Password. Credential values are not stored in this repository.
+
+Use placeholders when documenting notification settings:
+
+```text
+SMTP username: EMAIL_ADDRESS
+SMTP password: APP_PASSWORD_REDACTED
+```
+
+Completed alerting proof:
+
+- Uptime Kuma notification type: Email SMTP.
+- Test notification result: `Sent Successfully`.
+- Test email received in inbox.
+- Evidence screenshot filename: `docs/screenshots/14-uptime-kuma-notification-test.png`.
+- Real email address and credential values must be redacted before public commit.
+
+Normal alerting activity:
+
+- A manually triggered test notification arrives in the expected inbox.
+- Uptime Kuma reports the notification test as successful.
+- The email subject and body match the expected test message.
+
+Suspicious alerting activity:
+
+- Notification settings change unexpectedly.
+- Test messages are sent to an unknown address.
+- SMTP authentication failures repeat in logs.
+- Alerts are disabled without a documented reason.
+
 ### Normal Docker Activity
 
 Examples of normal Docker activity:
@@ -149,6 +184,7 @@ Recommended screenshots:
 - `docker ps` output.
 - Docker logs for each core service.
 - Uptime Kuma showing monitored services up.
+- Uptime Kuma notification test email with the real address redacted.
 
 Redact or avoid capturing:
 
@@ -196,6 +232,11 @@ Before installing Wazuh:
 - [ ] Accepted login search documented
 - [ ] Docker container status reviewed
 - [ ] Docker service logs reviewed
+- [x] Uptime Kuma notification configured
+- [x] Notification test sent successfully
+- [x] Test email received
+- [x] Evidence screenshot saved/redacted
+- [x] Redacted notification screenshot added to repository
 - [ ] Normal activity examples documented
 - [ ] Suspicious activity examples documented
 - [ ] Screenshots saved

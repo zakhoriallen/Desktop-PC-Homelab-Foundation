@@ -10,6 +10,11 @@ Phase 4 starts with lightweight security monitoring using existing Ubuntu and Do
 - [ ] Accepted login search documented
 - [ ] Docker container status reviewed
 - [ ] Docker service logs reviewed
+- [x] Uptime Kuma notification configured
+- [x] Notification test sent successfully
+- [x] Test email received
+- [x] Evidence screenshot saved/redacted
+- [x] Redacted notification screenshot added to repository
 - [ ] Normal activity examples documented
 - [ ] Suspicious activity examples documented
 - [ ] Screenshots saved
@@ -63,12 +68,30 @@ Follow logs live:
 docker logs -f --tail 50 portainer
 ```
 
+## Alerting Proof
+
+- [x] Uptime Kuma Email SMTP notification configured
+- [x] Gmail SMTP authentication documented with placeholders only
+- [x] Google App Password value omitted from documentation
+- [x] Test notification returned `Sent Successfully`
+- [x] Test email received in inbox
+- [x] Evidence screenshot captured/redacted
+- [x] Redacted screenshot added to repo as `docs/screenshots/14-uptime-kuma-notification-test.png`
+
+Use placeholders only:
+
+```text
+EMAIL_ADDRESS
+APP_PASSWORD_REDACTED
+```
+
 ## Documentation Rules
 
 - Use placeholders for real IPs, usernames, emails, and sensitive details.
 - Do not store passwords, tokens, API keys, SSH keys, private keys, or `.env` files in the repo.
 - Do not commit backup archives.
 - Save screenshots only after checking that sensitive details are hidden or acceptable for public GitHub.
+- Redact real email addresses from notification screenshots before committing.
 
 ## Suggested Commit Message
 

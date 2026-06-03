@@ -30,7 +30,7 @@ Windows Desktop Host -> VirtualBox -> Ubuntu Server VM -> Docker containers
 - Network: Bridged Adapter
 - OS: Ubuntu Server LTS
 - Enable OpenSSH Server during Ubuntu install
-- Linux user: `khoto`
+- Linux user: `USERNAME`
 - Current VM IP: `LAN_VM_IP`
 - Tailscale VM IP: `TAILSCALE_VM_IP`
 
@@ -107,7 +107,7 @@ Portainer
 - [x] Create VM named `homelab-ubuntu`
 - [x] Set VM network to Bridged Adapter
 - [x] Install Ubuntu Server manually
-- [x] Create Linux user: `khoto`
+- [x] Create Linux user: `USERNAME`
 - [x] Enable OpenSSH Server
 - [x] Boot into Ubuntu Server
 - [x] Confirm VM IP: `LAN_VM_IP`

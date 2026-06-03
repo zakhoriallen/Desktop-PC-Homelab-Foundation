@@ -50,9 +50,9 @@ homelab-backup-2026-06-02_18-24-33.tar.gz
 
 The backup archive includes:
 
-- `home/khoto/homelab/stacks/`
-- `home/khoto/homelab/docs/`
-- `home/khoto/homelab/README.md`
+- `home/USERNAME/homelab/stacks/`
+- `home/USERNAME/homelab/docs/`
+- `home/USERNAME/homelab/README.md`
 
 ## Next Backup Improvements
 

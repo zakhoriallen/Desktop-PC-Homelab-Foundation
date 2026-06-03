@@ -5,7 +5,7 @@
 - VM name: `homelab-ubuntu`
 - Host OS: Windows
 - VM network mode: Bridged Adapter
-- Ubuntu username: `khoto`
+- Ubuntu username: `USERNAME`
 - VM IP address: `LAN_VM_IP`
 - Tailscale VM IP address: `TAILSCALE_VM_IP`
 

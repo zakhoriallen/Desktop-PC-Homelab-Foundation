@@ -111,6 +111,7 @@ This phase documents:
 - Searches for failed and accepted SSH logins.
 - Docker container status review.
 - Docker logs for Portainer, Uptime Kuma, AdGuard Home, and Homepage.
+- Uptime Kuma Email SMTP alerting proof with credentials omitted.
 - Normal vs suspicious activity examples.
 - Screenshot evidence for basic security monitoring practice.
 
@@ -130,6 +131,14 @@ docker logs --tail 50 homepage
 
 Detailed notes are available in [docs/security-monitoring.md](docs/security-monitoring.md) and [docs/phase-4-checklist.md](docs/phase-4-checklist.md).
 
+Alerting proof completed:
+
+- Uptime Kuma Email SMTP notification configured.
+- Test notification returned `Sent Successfully`.
+- Test email received in inbox.
+- Evidence screenshot filename: `docs/screenshots/14-uptime-kuma-notification-test.png`.
+- Documentation uses `EMAIL_ADDRESS` and `APP_PASSWORD_REDACTED` placeholders instead of credential values.
+
 ## Screenshots
 
 | Proof | Screenshot |
@@ -142,6 +151,7 @@ Detailed notes are available in [docs/security-monitoring.md](docs/security-moni
 | Tailscale machines | ![Tailscale machines page](docs/screenshots/06-tailscale-machines-page.png) |
 | UFW firewall rules | ![UFW status numbered](docs/screenshots/07-ufw-status-numbered.png) |
 | Backup script output | ![Backup script output](docs/screenshots/08-backup-script-output.png) |
+| Uptime Kuma notification test | ![Uptime Kuma notification test](docs/screenshots/14-uptime-kuma-notification-test.png) |
 
 ## Repository Layout
 

@@ -11,7 +11,7 @@
 - [x] VM configured with 120 GB disk
 - [x] Network mode set to Bridged Adapter
 - [x] Ubuntu Server installed manually
-- [x] Linux user created: `khoto`
+- [x] Linux user created: `USERNAME`
 - [x] OpenSSH Server enabled during install
 
 ## Access
@@ -62,7 +62,7 @@
 - [x] 3. Create VM named `homelab-ubuntu`
 - [x] 4. Set VM network to Bridged Adapter
 - [x] 5. Install Ubuntu Server manually
-- [x] 6. Create Linux user: `khoto`
+- [x] 6. Create Linux user: `USERNAME`
 - [x] 7. Enable OpenSSH Server
 - [x] 8. Boot into Ubuntu Server
 - [x] 9. Confirm VM IP: `LAN_VM_IP`
