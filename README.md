@@ -151,6 +151,7 @@ Wazuh readiness note:
 - The next decision is whether the VM has enough CPU, RAM, and disk for Wazuh or whether to keep Phase 4 lightweight.
 - Wazuh was evaluated as a future SIEM option, but installation was deferred after resource planning.
 - The current Phase 4 workflow focuses on lightweight SSH log review, Docker log review, Uptime Kuma alerting, and documented readiness checks.
+- Backup restore testing was completed before moving further toward Wazuh deployment planning.
 
 Wazuh planning notes are available in [docs/wazuh-planning.md](docs/wazuh-planning.md).
 
@@ -168,6 +169,7 @@ Wazuh planning notes are available in [docs/wazuh-planning.md](docs/wazuh-planni
 | Backup script output | ![Backup script output](docs/screenshots/08-backup-script-output.png) |
 | Uptime Kuma notification test | ![Uptime Kuma notification test](docs/screenshots/14-uptime-kuma-notification-test.png) |
 | Wazuh readiness resource check | ![Wazuh readiness resource check](docs/screenshots/15-resource-check-before-wazuh.png) |
+| Backup restore test | ![Backup restore test](docs/screenshots/16-backup-restore-test.png) |
 
 ## Repository Layout
 

@@ -110,11 +110,17 @@ Keep Phase 4 lightweight for now. The current monitoring workflow uses:
 
 Only consider Wazuh installation after:
 
-- [ ] Backup restore test completed
+- [x] Backup restore test completed
 - [ ] VM resource usage remains stable
 - [ ] Enough disk space is confirmed
 - [ ] Decision made: same VM or separate security VM
 - [ ] Install steps are documented before execution
+
+Backup restore proof:
+
+```text
+docs/screenshots/16-backup-restore-test.png
+```
 
 ## Resume Value
 

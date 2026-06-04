@@ -20,7 +20,7 @@ Phase 4 starts with lightweight security monitoring using existing Ubuntu and Do
 - [x] Resource check before Wazuh completed
 - [x] Wazuh planning documented
 - [x] Wazuh install deferred
-- [ ] Backup restore test completed
+- [x] Backup restore test completed
 - [ ] Wazuh deployment option selected
 - [ ] Normal activity examples documented
 - [ ] Suspicious activity examples documented
@@ -87,8 +87,16 @@ Wazuh has not been installed yet. The next decision is whether the current VM ha
 - [ ] Decide whether to install Wazuh later, increase VM resources, or keep Phase 4 lightweight
 - [x] Wazuh planning documented in `docs/wazuh-planning.md`
 - [x] Wazuh install deferred
-- [ ] Backup restore test completed
+- [x] Backup restore test completed
 - [ ] Wazuh deployment option selected
+
+## Backup Restore Test
+
+- [x] Backup archive listed successfully
+- [x] Backup archive extracted safely into `~/homelab/restore-test`
+- [x] Restored files found under `~/homelab/restore-test/home/USERNAME/homelab/`
+- [x] Nested restore path documented
+- [x] Evidence screenshot saved/redacted as `docs/screenshots/16-backup-restore-test.png`
 
 Commands:
 
