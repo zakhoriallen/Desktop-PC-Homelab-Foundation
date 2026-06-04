@@ -250,6 +250,8 @@ Screenshot saved:
 
 Wazuh is a future step, not part of this lightweight workflow.
 
+Detailed planning notes are available in [wazuh-planning.md](wazuh-planning.md).
+
 Before installing Wazuh:
 
 - Confirm the VM has enough RAM and disk.

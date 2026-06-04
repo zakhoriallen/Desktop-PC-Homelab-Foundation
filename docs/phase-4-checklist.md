@@ -17,6 +17,11 @@ Phase 4 starts with lightweight security monitoring using existing Ubuntu and Do
 - [x] Redacted notification screenshot added to repository
 - [x] Wazuh readiness resource check documented
 - [x] Resource check screenshot saved/redacted
+- [x] Resource check before Wazuh completed
+- [x] Wazuh planning documented
+- [x] Wazuh install deferred
+- [ ] Backup restore test completed
+- [ ] Wazuh deployment option selected
 - [ ] Normal activity examples documented
 - [ ] Suspicious activity examples documented
 - [ ] Screenshots saved
@@ -80,6 +85,10 @@ Wazuh has not been installed yet. The next decision is whether the current VM ha
 - [ ] Process/load view checked with `htop`
 - [x] Evidence screenshot saved/redacted as `docs/screenshots/15-resource-check-before-wazuh.png`
 - [ ] Decide whether to install Wazuh later, increase VM resources, or keep Phase 4 lightweight
+- [x] Wazuh planning documented in `docs/wazuh-planning.md`
+- [x] Wazuh install deferred
+- [ ] Backup restore test completed
+- [ ] Wazuh deployment option selected
 
 Commands:
 

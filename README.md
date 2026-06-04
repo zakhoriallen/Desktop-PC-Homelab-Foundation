@@ -149,6 +149,10 @@ Wazuh readiness note:
 - Wazuh has not been installed yet.
 - Resource checks were documented before making the install decision.
 - The next decision is whether the VM has enough CPU, RAM, and disk for Wazuh or whether to keep Phase 4 lightweight.
+- Wazuh was evaluated as a future SIEM option, but installation was deferred after resource planning.
+- The current Phase 4 workflow focuses on lightweight SSH log review, Docker log review, Uptime Kuma alerting, and documented readiness checks.
+
+Wazuh planning notes are available in [docs/wazuh-planning.md](docs/wazuh-planning.md).
 
 ## Screenshots
 
@@ -180,6 +184,7 @@ Wazuh readiness note:
 |   |-- security-networking.md
 |   |-- services.md
 |   |-- setup-log.md
+|   |-- wazuh-planning.md
 |   `-- screenshots/
 |-- scripts/
 |   |-- backup-homelab.sh
@@ -250,7 +255,7 @@ It backs up:
 ## Next Planned Phases
 
 - Continue Phase 4 with lightweight Linux, SSH, and Docker log review. See [docs/security-monitoring.md](docs/security-monitoring.md) and [docs/phase-4-checklist.md](docs/phase-4-checklist.md).
-- Later Phase 4 expansion: research Wazuh after the lightweight baseline is documented. See [docs/phase-4-wazuh-security-monitoring.md](docs/phase-4-wazuh-security-monitoring.md).
+- Later Phase 4 expansion: research Wazuh after the lightweight baseline is documented. See [docs/wazuh-planning.md](docs/wazuh-planning.md) and [docs/phase-4-wazuh-security-monitoring.md](docs/phase-4-wazuh-security-monitoring.md).
 - Phase 5: Windows Server and Active Directory lab. See [docs/phase-5-windows-server-active-directory.md](docs/phase-5-windows-server-active-directory.md).
 
 ## Resume Bullet Examples
