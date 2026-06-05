@@ -33,15 +33,19 @@
 
 Uptime Kuma is monitoring:
 
+- AdGuard DNS
 - AdGuard Home
 - Homepage
 - Portainer
 - Uptime Kuma
 
-Current dashboard proof shows four services up and zero services down.
+Current dashboard proof shows the core service monitors up, including a dedicated AdGuard DNS monitor.
 
 ## Notes
 
 - Portainer uses HTTPS with a self-signed certificate, so browser and monitor certificate warnings are expected unless a trusted local certificate is configured later.
 - AdGuard Home is running, but router-wide DNS should wait until DNS behavior is tested from one client first.
+- Manual DNS tests confirmed AdGuard can resolve normal domains and block at least one ad/tracker domain over `LAN_VM_IP`.
+- DNS over `TAILSCALE_VM_IP` is not enabled yet and returned connection refused during testing.
+- Uptime Kuma now includes a dedicated `AdGuard DNS` monitor that checks the `google.com` A record through AdGuard DNS.
 - Homepage required `HOMEPAGE_ALLOWED_HOSTS=LAN_VM_IP:3002,TAILSCALE_VM_IP:3002` to avoid host validation errors across LAN and Tailscale.

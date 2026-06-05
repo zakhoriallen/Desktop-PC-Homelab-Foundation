@@ -28,6 +28,27 @@ Phase 4 starts with lightweight security monitoring using existing Ubuntu and Do
 - [ ] README updated
 - [ ] Commit Phase 4 lightweight monitoring workflow
 
+## AdGuard One-Device DNS Filtering Test
+
+- [x] AdGuard DNS resolves normal domain over LAN
+- [x] AdGuard blocks tracker/ad domain over LAN
+- [x] Tailscale DNS access tested and documented as not enabled
+- [x] Windows PowerShell DNS test completed
+- [x] AdGuard Query Log screenshot saved
+- [x] Temporary Windows DNS test completed
+- [x] Rollback steps documented
+- [x] Uptime Kuma AdGuard DNS monitor added
+- [x] DNS monitor screenshot saved
+- [x] One-device AdGuard DNS filtering test evidence completed
+
+Screenshot placeholders:
+
+```text
+docs/screenshots/17-adguard-query-log-manual-test.png
+docs/screenshots/18-windows-dns-adguard-test.png
+docs/screenshots/19-uptime-kuma-adguard-dns-monitor.png
+```
+
 ## Commands To Run
 
 Check SSH service:

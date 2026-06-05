@@ -155,6 +155,19 @@ Wazuh readiness note:
 
 Wazuh planning notes are available in [docs/wazuh-planning.md](docs/wazuh-planning.md).
 
+## AdGuard DNS Filtering Test
+
+AdGuard Home is being tested on one device before any router-wide DNS changes.
+
+- Manual `nslookup` tests confirmed AdGuard resolves normal domains over `LAN_VM_IP`.
+- Manual `nslookup` tests confirmed AdGuard blocks at least one ad/tracker domain over `LAN_VM_IP`.
+- DNS access over `TAILSCALE_VM_IP` returned connection refused and is documented as a future improvement.
+- Uptime Kuma now includes a dedicated `AdGuard DNS` monitor that checks the `google.com` A record through AdGuard DNS.
+- One-device DNS filtering evidence is complete.
+- Router-wide DNS is intentionally deferred until one-device testing is stable.
+
+Test notes are available in [docs/adguard-dns-testing.md](docs/adguard-dns-testing.md).
+
 ## Screenshots
 
 | Proof | Screenshot |
@@ -170,6 +183,7 @@ Wazuh planning notes are available in [docs/wazuh-planning.md](docs/wazuh-planni
 | Uptime Kuma notification test | ![Uptime Kuma notification test](docs/screenshots/14-uptime-kuma-notification-test.png) |
 | Wazuh readiness resource check | ![Wazuh readiness resource check](docs/screenshots/15-resource-check-before-wazuh.png) |
 | Backup restore test | ![Backup restore test](docs/screenshots/16-backup-restore-test.png) |
+| AdGuard Query Log DNS filtering proof | ![AdGuard Query Log DNS filtering proof](docs/screenshots/17-adguard-query-log-manual-test.png) |
 
 ## Repository Layout
 
@@ -179,6 +193,7 @@ Wazuh planning notes are available in [docs/wazuh-planning.md](docs/wazuh-planni
 |-- docs/
 |   |-- architecture.md
 |   |-- backups.md
+|   |-- adguard-dns-testing.md
 |   |-- lessons-learned.md
 |   |-- network-notes.md
 |   |-- phase-1-checklist.md
@@ -219,6 +234,7 @@ Wazuh planning notes are available in [docs/wazuh-planning.md](docs/wazuh-planni
 - Portainer uses a self-signed HTTPS certificate; Uptime Kuma may need TLS verification ignored for that monitor.
 - Homepage required `HOMEPAGE_ALLOWED_HOSTS` to include both LAN and Tailscale hostnames/IPs.
 - AdGuard Home DNS should be tested on one device before changing router-wide DNS.
+- AdGuard DNS works over LAN for manual tests, while DNS over Tailscale is not enabled yet.
 - UFW should be enabled only after confirming SSH and service ports are allowed.
 
 More detail is available in [docs/lessons-learned.md](docs/lessons-learned.md) and [docs/security-networking.md](docs/security-networking.md).
@@ -250,6 +266,7 @@ It backs up:
 - Enable SSH key-only login after confirming key access.
 - Add Uptime Kuma notifications.
 - Test AdGuard DNS from one device before router-wide rollout.
+- Investigate AdGuard DNS over Tailscale only after LAN testing is stable.
 - Copy backups from VM storage to the HDD.
 - Add a restore test for the backup archive.
 - Add more services only after the foundation stays stable.

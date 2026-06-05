@@ -56,3 +56,21 @@ HOMEPAGE_ALLOWED_HOSTS: LAN_VM_IP:3002,TAILSCALE_VM_IP:3002
 - Do not point router DNS to AdGuard yet.
 - Test AdGuard DNS from one device only before wider use.
 
+## AdGuard One-Device DNS Test
+
+AdGuard DNS is being tested from one device before router-wide DNS changes.
+
+Current results:
+
+- `google.com` resolved normally through `LAN_VM_IP`.
+- `doubleclick.net` returned `0.0.0.0` through `LAN_VM_IP`.
+- DNS over `TAILSCALE_VM_IP` returned connection refused and is not enabled yet.
+
+Current decision:
+
+- Use `LAN_VM_IP` for the one-device DNS test.
+- Keep Tailscale for dashboard access.
+- Do not expose AdGuard publicly.
+- Do not point router DNS to AdGuard yet.
+
+Detailed test notes are in [adguard-dns-testing.md](adguard-dns-testing.md).
