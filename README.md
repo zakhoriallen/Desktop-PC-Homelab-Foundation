@@ -184,6 +184,8 @@ Test notes are available in [docs/adguard-dns-testing.md](docs/adguard-dns-testi
 | Wazuh readiness resource check | ![Wazuh readiness resource check](docs/screenshots/15-resource-check-before-wazuh.png) |
 | Backup restore test | ![Backup restore test](docs/screenshots/16-backup-restore-test.png) |
 | AdGuard Query Log DNS filtering proof | ![AdGuard Query Log DNS filtering proof](docs/screenshots/17-adguard-query-log-manual-test.png) |
+| Windows one-device AdGuard DNS test | ![Windows one-device AdGuard DNS test](docs/screenshots/18-windows-dns-adguard-test.png) |
+| Uptime Kuma AdGuard DNS monitor | ![Uptime Kuma AdGuard DNS monitor](docs/screenshots/19-uptime-kuma-adguard-dns-monitor.png) |
 
 ## Repository Layout
 

@@ -91,7 +91,7 @@ Windows DNS test evidence:
 - `nslookup doubleclick.net` returned `0.0.0.0`.
 - This confirms one-device DNS filtering worked without changing router-wide DNS.
 
-Screenshot placeholder:
+Screenshot:
 
 ```text
 docs/screenshots/18-windows-dns-adguard-test.png
@@ -104,7 +104,7 @@ The AdGuard Query Log should show:
 - `google.com` allowed.
 - `doubleclick.net` blocked or sinkholed.
 
-Screenshot placeholder:
+Screenshot:
 
 ```text
 docs/screenshots/17-adguard-query-log-manual-test.png
@@ -160,13 +160,17 @@ docs/screenshots/19-uptime-kuma-adguard-dns-monitor.png
 ## Screenshot Checklist
 
 - [x] `docs/screenshots/17-adguard-query-log-manual-test.png`
-- [ ] `docs/screenshots/18-windows-dns-adguard-test.png`
+- [x] `docs/screenshots/18-windows-dns-adguard-test.png`
 - [x] `docs/screenshots/19-uptime-kuma-adguard-dns-monitor.png`
 
 ## Current Completion Status
 
+- [x] Manual AdGuard DNS test completed
+- [x] Windows one-device DNS test completed
+- [x] AdGuard Query Log screenshot saved
 - [x] Uptime Kuma AdGuard DNS monitor added
 - [x] DNS monitor screenshot saved
+- [x] Rollback steps documented
 - [x] One-device AdGuard DNS filtering test evidence completed
 
 ## Future Improvements
