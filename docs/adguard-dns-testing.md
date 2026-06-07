@@ -10,6 +10,7 @@ The goal is to validate DNS behavior safely before making any router-wide DNS ch
 
 - Test one device first.
 - Do not change router-wide DNS yet.
+- Keep Windows using AdGuard DNS for 24-48 hours to test stability before expanding.
 - Keep rollback instructions documented.
 - Keep AdGuard private/local.
 - Use Tailscale for dashboard access, not public exposure.
@@ -47,7 +48,8 @@ Interpretation:
 - AdGuard can block ad/tracker domains.
 - AdGuard DNS over Tailscale is not enabled yet.
 - Tailscale DNS access is documented as a later optional improvement.
-- The next step is to test from Windows PowerShell using `LAN_VM_IP`, then confirm queries appear in the AdGuard Query Log.
+- IPv4 DNS was tested first for simplicity and troubleshooting clarity.
+- IPv6 DNS was not configured yet and is documented as a future improvement.
 
 ## Windows One-Device Test Plan
 
@@ -90,6 +92,7 @@ Windows DNS test evidence:
 - `nslookup google.com` resolved through AdGuard DNS.
 - `nslookup doubleclick.net` returned `0.0.0.0`.
 - This confirms one-device DNS filtering worked without changing router-wide DNS.
+- The Windows PC successfully used AdGuard as DNS over the LAN.
 
 Screenshot:
 
@@ -171,12 +174,14 @@ docs/screenshots/19-uptime-kuma-adguard-dns-monitor.png
 - [x] Uptime Kuma AdGuard DNS monitor added
 - [x] DNS monitor screenshot saved
 - [x] Rollback steps documented
+- [x] Router-wide DNS deferred
 - [x] One-device AdGuard DNS filtering test evidence completed
 
 ## Future Improvements
 
-- Router-wide DNS rollout after one-device testing is stable.
+- Router-wide DNS rollout after one-device testing stays stable for 24-48 hours.
 - Tailscale DNS access investigation.
+- IPv6 DNS handling.
 - AdGuard DHCP mode only if router DNS options are limited.
 - Add more blocklists carefully.
 - Monitor query volume and false positives.

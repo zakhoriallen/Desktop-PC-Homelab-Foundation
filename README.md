@@ -9,6 +9,9 @@ The goal of this project was to build a practical foundation for learning system
 - Phase 1: Complete
 - Phase 2: Complete except optional later hardening
 - Phase 3: GitHub/resume polish complete
+- Phase 4: Complete enough to move forward
+- Current mini-project: AdGuard one-device DNS filtering proof complete; router-wide DNS deferred
+- Next phase: Phase 5 Windows Server + Active Directory planning
 
 ## Architecture
 
@@ -164,7 +167,8 @@ AdGuard Home is being tested on one device before any router-wide DNS changes.
 - DNS access over `TAILSCALE_VM_IP` returned connection refused and is documented as a future improvement.
 - Uptime Kuma now includes a dedicated `AdGuard DNS` monitor that checks the `google.com` A record through AdGuard DNS.
 - One-device DNS filtering evidence is complete.
-- Router-wide DNS is intentionally deferred until one-device testing is stable.
+- Router-wide DNS is intentionally deferred until one-device testing stays stable for 24-48 hours.
+- IPv4 DNS was tested first for simplicity and troubleshooting clarity; IPv6 DNS handling is a future improvement.
 
 Test notes are available in [docs/adguard-dns-testing.md](docs/adguard-dns-testing.md).
 
@@ -269,6 +273,8 @@ It backs up:
 - Add Uptime Kuma notifications.
 - Test AdGuard DNS from one device before router-wide rollout.
 - Investigate AdGuard DNS over Tailscale only after LAN testing is stable.
+- Continue monitoring one-device AdGuard DNS stability for 24-48 hours before router-wide DNS.
+- Plan Windows Server and Active Directory before installing any new VMs.
 - Copy backups from VM storage to the HDD.
 - Add a restore test for the backup archive.
 - Add more services only after the foundation stays stable.
@@ -277,7 +283,8 @@ It backs up:
 
 - Continue Phase 4 with lightweight Linux, SSH, and Docker log review. See [docs/security-monitoring.md](docs/security-monitoring.md) and [docs/phase-4-checklist.md](docs/phase-4-checklist.md).
 - Later Phase 4 expansion: research Wazuh after the lightweight baseline is documented. See [docs/wazuh-planning.md](docs/wazuh-planning.md) and [docs/phase-4-wazuh-security-monitoring.md](docs/phase-4-wazuh-security-monitoring.md).
-- Phase 5: Windows Server and Active Directory lab. See [docs/phase-5-windows-server-active-directory.md](docs/phase-5-windows-server-active-directory.md).
+- Phase 5: Windows Server + Active Directory lab planning. See [docs/phase-5-active-directory-plan.md](docs/phase-5-active-directory-plan.md).
+- Supporting Phase 5 notes are also available in [docs/phase-5-windows-server-active-directory.md](docs/phase-5-windows-server-active-directory.md).
 
 ## Resume Bullet Examples
 

@@ -40,8 +40,11 @@ Phase 4 starts with lightweight security monitoring using existing Ubuntu and Do
 - [x] Uptime Kuma AdGuard DNS monitor added
 - [x] DNS monitor screenshot saved
 - [x] One-device AdGuard DNS filtering test evidence completed
+- [x] Manual AdGuard DNS test completed
+- [x] Router-wide DNS deferred
+- [x] IPv4 tested first; IPv6 DNS documented as future improvement
 
-Screenshot placeholders:
+Evidence screenshots:
 
 ```text
 docs/screenshots/17-adguard-query-log-manual-test.png

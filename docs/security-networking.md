@@ -69,8 +69,11 @@ Current results:
 Current decision:
 
 - Use `LAN_VM_IP` for the one-device DNS test.
+- Keep Windows using AdGuard DNS for 24-48 hours to test stability.
 - Keep Tailscale for dashboard access.
 - Do not expose AdGuard publicly.
 - Do not point router DNS to AdGuard yet.
+- IPv4 DNS was tested first for simplicity.
+- IPv6 DNS handling is a future improvement.
 
 Detailed test notes are in [adguard-dns-testing.md](adguard-dns-testing.md).
