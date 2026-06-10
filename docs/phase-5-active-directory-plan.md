@@ -9,7 +9,7 @@ This is planning documentation only. Windows Server should not be installed unti
 ## Current Decision
 
 - Do not start installing Windows Server yet.
-- Keep the AdGuard one-device DNS test running for 24-48 hours before any router-wide DNS changes.
+- Keep router-wide AdGuard DNS deferred until a future rollout decision.
 - Phase 5 planning can begin while AdGuard stability testing continues.
 - Keep all future Active Directory services private/local.
 - Do not store domain passwords, recovery keys, license keys, or secrets in this repo.

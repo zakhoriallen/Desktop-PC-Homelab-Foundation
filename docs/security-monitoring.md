@@ -1,8 +1,8 @@
 # Security Monitoring
 
-Phase 4 begins the blue-team layer of the homelab. Wazuh is intentionally not installed yet. This phase starts with lightweight log review using the Ubuntu and Docker logs that already exist.
+Phase 4 completed the blue-team layer of the homelab with lightweight monitoring and evidence gathering. Wazuh is intentionally not installed yet; it is planned for a later decision after resource review.
 
-The goal is to learn what normal activity looks like before adding a larger security monitoring platform.
+The goal was to learn what normal activity looks like before adding a larger security monitoring platform.
 
 ## Scope
 
@@ -12,6 +12,9 @@ The goal is to learn what normal activity looks like before adding a larger secu
 - Review Docker container status.
 - Review Docker service logs.
 - Verify Uptime Kuma email alerting.
+- Validate backup restore proof.
+- Validate AdGuard one-device DNS filtering.
+- Add an Uptime Kuma AdGuard DNS monitor.
 - Check VM resources before deciding whether to install Wazuh.
 - Document examples of normal and suspicious activity.
 - Save screenshots for proof of work.
@@ -143,9 +146,9 @@ Suspicious alerting activity:
 
 ## Wazuh Readiness Resource Check
 
-Wazuh has not been installed yet. Before adding it, the next decision is whether the current VM has enough CPU, RAM, and disk space for Wazuh or whether Phase 4 should stay lightweight for now.
+Wazuh has not been installed yet. Phase 4 completed the resource check and deferred Wazuh installation because the lightweight monitoring baseline is stable and sufficient for this phase.
 
-Run these commands before making that decision:
+Commands used for the resource check:
 
 ```bash
 free -h
@@ -167,11 +170,12 @@ Evidence screenshot:
 docs/screenshots/15-resource-check-before-wazuh.png
 ```
 
-Decision options:
+Decision:
 
-- Continue lightweight Phase 4 monitoring if resources are tight.
-- Increase VM resources before installing Wazuh.
-- Deploy Wazuh later on a separate security monitoring VM.
+- Keep Phase 4 lightweight.
+- Plan Wazuh carefully before any install.
+- Consider a same-VM deployment only after confirming resources.
+- Consider a separate security monitoring VM if isolation is preferred.
 
 ### Normal Docker Activity
 
@@ -209,7 +213,7 @@ Suspicious: SERVICE_NAME shows repeated login failures or unexpected requests fr
 
 ## Screenshot Evidence
 
-Recommended screenshots:
+Completed screenshot evidence:
 
 - SSH service status.
 - Failed SSH login search.
@@ -219,6 +223,10 @@ Recommended screenshots:
 - Uptime Kuma showing monitored services up.
 - Uptime Kuma notification test email with the real address redacted.
 - Wazuh readiness resource check before installation.
+- Backup restore test.
+- AdGuard Query Log proof.
+- Windows one-device AdGuard DNS test.
+- Uptime Kuma AdGuard DNS monitor.
 
 Redact or avoid capturing:
 
@@ -248,7 +256,7 @@ Screenshot saved:
 
 ## Wazuh Planning
 
-Wazuh is a future step, not part of this lightweight workflow.
+Wazuh is a future step, not part of this completed lightweight workflow.
 
 Detailed planning notes are available in [wazuh-planning.md](wazuh-planning.md).
 
@@ -262,12 +270,12 @@ Before installing Wazuh:
 
 ## Success Criteria
 
-- [ ] SSH service status documented
-- [ ] SSH logs reviewed
-- [ ] Failed login search documented
-- [ ] Accepted login search documented
-- [ ] Docker container status reviewed
-- [ ] Docker service logs reviewed
+- [x] SSH service status documented
+- [x] SSH logs reviewed
+- [x] Failed login search documented
+- [x] Accepted login search documented
+- [x] Docker container status reviewed
+- [x] Docker service logs reviewed
 - [x] Uptime Kuma notification configured
 - [x] Notification test sent successfully
 - [x] Test email received
@@ -275,7 +283,11 @@ Before installing Wazuh:
 - [x] Redacted notification screenshot added to repository
 - [x] Wazuh readiness resource check documented
 - [x] Resource check screenshot saved/redacted
-- [ ] Normal activity examples documented
-- [ ] Suspicious activity examples documented
-- [ ] Screenshots saved
-- [ ] README updated
+- [x] Normal activity examples documented
+- [x] Suspicious activity examples documented
+- [x] Screenshots saved/redacted
+- [x] README updated
+- [x] Backup restore proof completed
+- [x] AdGuard DNS filtering proof completed
+- [x] Phase 4 summary written
+- [x] Phase 4 complete

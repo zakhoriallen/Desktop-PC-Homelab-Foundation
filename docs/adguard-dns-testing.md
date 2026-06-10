@@ -2,15 +2,15 @@
 
 ## Purpose
 
-This test proves that AdGuard Home is not just installed, but actually functioning as a DNS resolver and filtering service for a test device.
+This completed test proves that AdGuard Home is not just installed, but actually functioning as a DNS resolver and filtering service for a test device.
 
-The goal is to validate DNS behavior safely before making any router-wide DNS changes.
+The goal was to validate DNS behavior safely before making any router-wide DNS changes.
 
 ## Safety Approach
 
 - Test one device first.
 - Do not change router-wide DNS yet.
-- Keep Windows using AdGuard DNS for 24-48 hours to test stability before expanding.
+- Keep Windows one-device testing stable before expanding.
 - Keep rollback instructions documented.
 - Keep AdGuard private/local.
 - Use Tailscale for dashboard access, not public exposure.
@@ -21,6 +21,8 @@ LAN_VM_IP
 TAILSCALE_VM_IP
 USERNAME
 EMAIL_ADDRESS
+PUBLIC_DNS_FALLBACK
+SINKHOLE_IP
 ```
 
 ## Manual DNS Test Commands
@@ -39,7 +41,7 @@ nslookup doubleclick.net LAN_VM_IP
 | --- | --- | --- |
 | `nslookup google.com LAN_VM_IP` | Passed | AdGuard resolved a normal domain over LAN DNS. |
 | `nslookup google.com TAILSCALE_VM_IP` | Failed with connection refused | AdGuard DNS is not currently listening or reachable over the Tailscale IP on port 53. |
-| `nslookup doubleclick.net LAN_VM_IP` | Returned `0.0.0.0` | AdGuard blocked/sinkholed an ad or tracker domain. |
+| `nslookup doubleclick.net LAN_VM_IP` | Returned `SINKHOLE_IP` | AdGuard blocked/sinkholed an ad or tracker domain. |
 
 Interpretation:
 
@@ -64,7 +66,7 @@ Then temporarily set the Windows test device DNS:
 
 ```text
 Preferred DNS server: LAN_VM_IP
-Alternate DNS server: 1.1.1.1 or blank for a stricter test
+Alternate DNS server: PUBLIC_DNS_FALLBACK or blank for a stricter test
 ```
 
 Flush DNS:
@@ -90,7 +92,7 @@ Windows DNS test evidence:
 
 - Windows DNS cache was flushed with `ipconfig /flushdns`.
 - `nslookup google.com` resolved through AdGuard DNS.
-- `nslookup doubleclick.net` returned `0.0.0.0`.
+- `nslookup doubleclick.net` returned `SINKHOLE_IP`.
 - This confirms one-device DNS filtering worked without changing router-wide DNS.
 - The Windows PC successfully used AdGuard as DNS over the LAN.
 
@@ -176,10 +178,11 @@ docs/screenshots/19-uptime-kuma-adguard-dns-monitor.png
 - [x] Rollback steps documented
 - [x] Router-wide DNS deferred
 - [x] One-device AdGuard DNS filtering test evidence completed
+- [x] IPv6 DNS documented as future improvement
 
 ## Future Improvements
 
-- Router-wide DNS rollout after one-device testing stays stable for 24-48 hours.
+- Router-wide DNS rollout after one-device testing remains stable.
 - Tailscale DNS access investigation.
 - IPv6 DNS handling.
 - AdGuard DHCP mode only if router DNS options are limited.

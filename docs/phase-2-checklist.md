@@ -46,6 +46,6 @@
 
 - [ ] Set up SSH key login
 - [ ] Disable password SSH after key login is confirmed
-- [ ] Add Uptime Kuma notifications
+- [x] Add Uptime Kuma notifications
 - [ ] Test AdGuard DNS from one device only
 - [ ] Do not change router DNS yet

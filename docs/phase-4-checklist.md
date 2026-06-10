@@ -1,31 +1,39 @@
 # Phase 4 Checklist
 
-Phase 4 starts with lightweight security monitoring using existing Ubuntu and Docker logs. Wazuh is intentionally deferred until the baseline workflow is documented and understood.
+Phase 4 — Lightweight Security Monitoring, Backup Restore, AdGuard DNS Proof, and Wazuh Planning is complete. Wazuh is intentionally deferred until a future deployment decision.
 
 ## Lightweight Log Review Workflow
 
-- [ ] SSH service status documented
-- [ ] SSH logs reviewed
-- [ ] Failed login search documented
-- [ ] Accepted login search documented
-- [ ] Docker container status reviewed
-- [ ] Docker service logs reviewed
+- [x] SSH service status documented
+- [x] SSH logs reviewed
+- [x] Failed login search documented
+- [x] Accepted login search documented
+- [x] SSH log review completed
+- [x] Docker container status reviewed
+- [x] Docker service logs reviewed
+- [x] Docker log review completed
+- [x] Uptime Kuma service monitoring completed
 - [x] Uptime Kuma notification configured
 - [x] Notification test sent successfully
 - [x] Test email received
+- [x] Uptime Kuma email alert proof completed
+- [x] Backup archive created
 - [x] Evidence screenshot saved/redacted
 - [x] Redacted notification screenshot added to repository
 - [x] Wazuh readiness resource check documented
+- [x] Wazuh resource check completed
 - [x] Resource check screenshot saved/redacted
 - [x] Resource check before Wazuh completed
 - [x] Wazuh planning documented
 - [x] Wazuh install deferred
 - [x] Backup restore test completed
-- [ ] Wazuh deployment option selected
-- [ ] Normal activity examples documented
-- [ ] Suspicious activity examples documented
-- [ ] Screenshots saved
-- [ ] README updated
+- [x] Normal activity examples documented
+- [x] Suspicious activity examples documented
+- [x] Screenshots saved/redacted
+- [x] Port forwarding documented as possible but intentionally avoided
+- [x] README updated
+- [x] Phase 4 summary written
+- [x] Phase 4 complete
 - [ ] Commit Phase 4 lightweight monitoring workflow
 
 ## AdGuard One-Device DNS Filtering Test
@@ -41,8 +49,11 @@ Phase 4 starts with lightweight security monitoring using existing Ubuntu and Do
 - [x] DNS monitor screenshot saved
 - [x] One-device AdGuard DNS filtering test evidence completed
 - [x] Manual AdGuard DNS test completed
+- [x] AdGuard manual DNS test completed
 - [x] Router-wide DNS deferred
 - [x] IPv4 tested first; IPv6 DNS documented as future improvement
+- [x] Windows one-device DNS test completed
+- [x] AdGuard Query Log proof completed
 
 Evidence screenshots:
 
@@ -106,13 +117,19 @@ Wazuh has not been installed yet. The next decision is whether the current VM ha
 - [x] Memory checked with `free -h`
 - [x] Disk checked with `df -h`
 - [x] Container resource usage checked with `docker stats --no-stream`
-- [ ] Process/load view checked with `htop`
+- [x] Process/load view checked with `htop`
 - [x] Evidence screenshot saved/redacted as `docs/screenshots/15-resource-check-before-wazuh.png`
-- [ ] Decide whether to install Wazuh later, increase VM resources, or keep Phase 4 lightweight
+- [x] Decide whether to install Wazuh later, increase VM resources, or keep Phase 4 lightweight
 - [x] Wazuh planning documented in `docs/wazuh-planning.md`
 - [x] Wazuh install deferred
 - [x] Backup restore test completed
-- [ ] Wazuh deployment option selected
+
+## Future / Deferred
+
+- [ ] Router-wide AdGuard rollout
+- [ ] IPv6 DNS configuration
+- [ ] Wazuh installation
+- [ ] Active Directory phase
 
 ## Backup Restore Test
 
@@ -159,5 +176,5 @@ APP_PASSWORD_REDACTED
 ## Suggested Commit Message
 
 ```text
-Add Phase 4 lightweight security monitoring workflow
+Complete Phase 4 monitoring and DNS proof
 ```

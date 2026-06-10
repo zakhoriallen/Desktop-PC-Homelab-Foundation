@@ -87,6 +87,14 @@ Evidence screenshot:
 docs/screenshots/16-backup-restore-test.png
 ```
 
+Phase 4 status:
+
+- [x] Backup archive created
+- [x] Backup archive contents reviewed
+- [x] Backup restore test completed
+- [x] Restore path documented with `USERNAME` placeholder
+- [x] Restore evidence screenshot saved/redacted
+
 ## Next Backup Improvements
 
 - Copy backups from VM storage to HDD.

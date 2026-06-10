@@ -4,7 +4,7 @@
 
 Wazuh is being considered as a future SIEM and security monitoring layer for this homelab. It has not been installed yet.
 
-The current goal is to document whether Wazuh should be added later, what the tradeoffs are, and which deployment option makes the most sense based on current resources.
+Phase 4 completed Wazuh planning without installing Wazuh. The current goal is to keep the tradeoffs documented so a future phase can decide whether Wazuh should run on the existing VM or on a separate security monitoring VM.
 
 ## Current Resource Snapshot
 
@@ -98,21 +98,23 @@ Cons:
 
 Do not install Wazuh yet.
 
-Keep Phase 4 lightweight for now. The current monitoring workflow uses:
+Phase 4 is complete with Wazuh planned but not installed. The completed lightweight monitoring workflow uses:
 
 - SSH log review.
 - Docker log review.
 - Uptime Kuma service monitoring.
 - Uptime Kuma email alerting.
 - Resource checks before heavier service deployment.
+- Backup restore proof before heavier service deployment.
+- AdGuard DNS filtering proof and DNS monitor evidence.
 
 ## Future Install Criteria
 
 Only consider Wazuh installation after:
 
 - [x] Backup restore test completed
-- [ ] VM resource usage remains stable
-- [ ] Enough disk space is confirmed
+- [x] VM resource usage reviewed
+- [x] Disk space reviewed
 - [ ] Decision made: same VM or separate security VM
 - [ ] Install steps are documented before execution
 
@@ -124,4 +126,4 @@ docs/screenshots/16-backup-restore-test.png
 
 ## Resume Value
 
-Phase 4 currently demonstrates lightweight blue-team monitoring through SSH log review, Docker log review, service monitoring, alerting, and resource planning before SIEM deployment.
+Phase 4 demonstrates lightweight blue-team monitoring, service availability monitoring, alerting, backup/restore validation, DNS filtering, and SIEM planning before Wazuh deployment.

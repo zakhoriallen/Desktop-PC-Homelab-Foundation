@@ -1,11 +1,12 @@
-# Phase 4: Security Monitoring With Wazuh
+# Phase 4: Wazuh Security Monitoring Planning
 
-Goal: add security monitoring without destabilizing the working homelab foundation.
+Goal: plan future Wazuh security monitoring without destabilizing the working homelab foundation.
 
 ## Status
 
-- Phase: planned
-- Do not deploy until the current homelab backup is confirmed and the VM has enough free CPU/RAM/disk.
+- Phase: deferred future expansion
+- Phase 4 is complete without installing Wazuh.
+- Do not deploy Wazuh until a future install decision is made, the current homelab backup is confirmed, and the VM has enough free CPU/RAM/disk.
 
 ## Objectives
 
@@ -60,4 +61,3 @@ Wazuh can be heavier than the current Phase 1/2 services. Before deployment:
 - [ ] Uptime Kuma monitor added
 - [ ] Documentation updated
 - [ ] Screenshots saved
-

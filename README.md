@@ -9,7 +9,7 @@ The goal of this project was to build a practical foundation for learning system
 - Phase 1: Complete
 - Phase 2: Complete except optional later hardening
 - Phase 3: GitHub/resume polish complete
-- Phase 4: Complete enough to move forward
+- Phase 4: Complete — lightweight monitoring, backup restore proof, AdGuard DNS filtering proof, and Wazuh planning completed.
 - Current mini-project: AdGuard one-device DNS filtering proof complete; router-wide DNS deferred
 - Next phase: Phase 5 Windows Server + Active Directory planning
 
@@ -103,9 +103,9 @@ Completed:
 - Verified backup archive contents.
 - Saved Phase 2 proof screenshots for Tailscale, UFW, and backups.
 
-## Phase 4: Lightweight Security Monitoring
+## Phase 4 — Lightweight Security Monitoring, Backup Restore, AdGuard DNS Proof, and Wazuh Planning
 
-Phase 4 begins the blue-team layer of this homelab. Wazuh is not installed yet. The current focus is learning how to review the logs already available from Ubuntu, SSH, and Docker.
+Phase 4 completed the blue-team layer of this homelab without installing a heavy SIEM yet. Wazuh is planned but deferred. The completed workflow uses Ubuntu logs, SSH logs, Docker logs, Uptime Kuma alerting, backup restore proof, AdGuard DNS filtering proof, and Wazuh readiness planning.
 
 This phase documents:
 
@@ -114,7 +114,11 @@ This phase documents:
 - Searches for failed and accepted SSH logins.
 - Docker container status review.
 - Docker logs for Portainer, Uptime Kuma, AdGuard Home, and Homepage.
+- Uptime Kuma service monitors.
 - Uptime Kuma Email SMTP alerting proof with credentials omitted.
+- Backup archive creation and restore proof.
+- AdGuard one-device DNS filtering proof.
+- Uptime Kuma AdGuard DNS monitor proof.
 - Wazuh readiness resource checks before installing a heavier monitoring stack.
 - Normal vs suspicious activity examples.
 - Screenshot evidence for basic security monitoring practice.
@@ -137,7 +141,7 @@ docker stats --no-stream
 htop
 ```
 
-Detailed notes are available in [docs/security-monitoring.md](docs/security-monitoring.md) and [docs/phase-4-checklist.md](docs/phase-4-checklist.md).
+Detailed notes are available in [docs/security-monitoring.md](docs/security-monitoring.md), [docs/phase-4-checklist.md](docs/phase-4-checklist.md), and [docs/phases/phase-4-summary.md](docs/phases/phase-4-summary.md).
 
 Alerting proof completed:
 
@@ -155,20 +159,22 @@ Wazuh readiness note:
 - Wazuh was evaluated as a future SIEM option, but installation was deferred after resource planning.
 - The current Phase 4 workflow focuses on lightweight SSH log review, Docker log review, Uptime Kuma alerting, and documented readiness checks.
 - Backup restore testing was completed before moving further toward Wazuh deployment planning.
+- Phase 4 is complete with Wazuh planned but not installed.
 
 Wazuh planning notes are available in [docs/wazuh-planning.md](docs/wazuh-planning.md).
 
 ## AdGuard DNS Filtering Test
 
-AdGuard Home is being tested on one device before any router-wide DNS changes.
+AdGuard Home was tested on one device before any router-wide DNS changes.
 
 - Manual `nslookup` tests confirmed AdGuard resolves normal domains over `LAN_VM_IP`.
 - Manual `nslookup` tests confirmed AdGuard blocks at least one ad/tracker domain over `LAN_VM_IP`.
 - DNS access over `TAILSCALE_VM_IP` returned connection refused and is documented as a future improvement.
 - Uptime Kuma now includes a dedicated `AdGuard DNS` monitor that checks the `google.com` A record through AdGuard DNS.
 - One-device DNS filtering evidence is complete.
-- Router-wide DNS is intentionally deferred until one-device testing stays stable for 24-48 hours.
+- Router-wide DNS is intentionally deferred until a future rollout decision.
 - IPv4 DNS was tested first for simplicity and troubleshooting clarity; IPv6 DNS handling is a future improvement.
+- Screenshots were redacted and the documentation safety scan did not find exposed credentials.
 
 Test notes are available in [docs/adguard-dns-testing.md](docs/adguard-dns-testing.md).
 
@@ -208,6 +214,8 @@ Test notes are available in [docs/adguard-dns-testing.md](docs/adguard-dns-testi
 |   |-- services.md
 |   |-- setup-log.md
 |   |-- wazuh-planning.md
+|   |-- phases/
+|   |   `-- phase-4-summary.md
 |   `-- screenshots/
 |-- scripts/
 |   |-- backup-homelab.sh
@@ -270,19 +278,16 @@ It backs up:
 ## Future Improvements
 
 - Enable SSH key-only login after confirming key access.
-- Add Uptime Kuma notifications.
-- Test AdGuard DNS from one device before router-wide rollout.
+- Plan router-wide AdGuard DNS rollout only after the current one-device proof remains stable.
 - Investigate AdGuard DNS over Tailscale only after LAN testing is stable.
-- Continue monitoring one-device AdGuard DNS stability for 24-48 hours before router-wide DNS.
 - Plan Windows Server and Active Directory before installing any new VMs.
 - Copy backups from VM storage to the HDD.
-- Add a restore test for the backup archive.
 - Add more services only after the foundation stays stable.
 
 ## Next Planned Phases
 
-- Continue Phase 4 with lightweight Linux, SSH, and Docker log review. See [docs/security-monitoring.md](docs/security-monitoring.md) and [docs/phase-4-checklist.md](docs/phase-4-checklist.md).
-- Later Phase 4 expansion: research Wazuh after the lightweight baseline is documented. See [docs/wazuh-planning.md](docs/wazuh-planning.md) and [docs/phase-4-wazuh-security-monitoring.md](docs/phase-4-wazuh-security-monitoring.md).
+- Phase 4 is complete. See [docs/phases/phase-4-summary.md](docs/phases/phase-4-summary.md), [docs/security-monitoring.md](docs/security-monitoring.md), and [docs/phase-4-checklist.md](docs/phase-4-checklist.md).
+- Later security expansion: install Wazuh only after a separate deployment decision. See [docs/wazuh-planning.md](docs/wazuh-planning.md) and [docs/phase-4-wazuh-security-monitoring.md](docs/phase-4-wazuh-security-monitoring.md).
 - Phase 5: Windows Server + Active Directory lab planning. See [docs/phase-5-active-directory-plan.md](docs/phase-5-active-directory-plan.md).
 - Supporting Phase 5 notes are also available in [docs/phase-5-windows-server-active-directory.md](docs/phase-5-windows-server-active-directory.md).
 

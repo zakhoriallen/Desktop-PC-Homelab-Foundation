@@ -36,7 +36,7 @@ desktop-homelab-foundation
 3. Select:
 
 ```text
-C:\Users\zakho\OneDrive\Documents\Desktop PC Homelab Foundation
+C:\Users\USERNAME\OneDrive\Documents\Desktop PC Homelab Foundation
 ```
 
 4. If prompted, create a repository.
@@ -53,7 +53,7 @@ Document desktop homelab foundation
 Install Git for Windows, then run:
 
 ```powershell
-cd "C:\Users\zakho\OneDrive\Documents\Desktop PC Homelab Foundation"
+cd "C:\Users\USERNAME\OneDrive\Documents\Desktop PC Homelab Foundation"
 git init
 git add .
 git commit -m "Document desktop homelab foundation"
@@ -76,4 +76,3 @@ git push
 ```text
 Windows-hosted Ubuntu Server homelab with Docker Compose, Portainer, Uptime Kuma, AdGuard Home, Homepage, Tailscale, UFW, backups, and documentation.
 ```
-
