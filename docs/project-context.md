@@ -12,10 +12,11 @@ Build a working desktop-based homelab on a Windows PC using an Ubuntu Server VM 
 
 - Host OS: Windows
 - CPU: Ryzen 7 3700X
-- RAM: 32 GB
-- Storage: 1 TB SSD + 1 TB HDD
-- SSD: VM and active services
-- HDD: backups, ISOs, screenshots, and documentation
+- RAM: 48 GB
+- GPU: Intel Arc A770 16 GB
+- Storage: 1.84 TB total, about 570 GB used at Phase 5 preflight
+- SSD: 954 GB TEAM T2531TB for VM and active services
+- HDD: 932 GB WDC WD10EZEX for backups, ISOs, screenshots, and documentation
 
 ## Architecture
 
@@ -142,11 +143,27 @@ Portainer
 - [x] Save Phase 2 screenshots neatly
 - [ ] Optional SSH hardening
 
+## Current Phase 5 Status
+
+- [x] Phase 5 planning/runbook created
+- [ ] Confirm Windows Server ISO/licensing/evaluation path
+- [x] Confirm available host RAM and disk space
+- [ ] Decide VirtualBox network mode
+- [ ] Create Windows Server VM
+- [ ] Install Active Directory Domain Services
+- [ ] Promote server to Domain Controller
+- [ ] Create Windows client VM
+- [ ] Join Windows client to domain
+- [ ] Test Group Policy
+- [ ] Review Windows security events
+- [ ] Save Phase 5 screenshots neatly
+
+Phase 5 starts from `docs/phase-5-active-directory-plan.md`.
+
 ## Do Not Start Yet
 
 - Raspberry Pi 5 cyberdeck
 - Wazuh
-- Active Directory
 - Cloud networking
 - AWS/Azure
 - Advanced security monitoring

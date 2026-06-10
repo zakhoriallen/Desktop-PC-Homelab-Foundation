@@ -11,7 +11,7 @@ The goal of this project was to build a practical foundation for learning system
 - Phase 3: GitHub/resume polish complete
 - Phase 4: Complete — lightweight monitoring, backup restore proof, AdGuard DNS filtering proof, and Wazuh planning completed.
 - Current mini-project: AdGuard one-device DNS filtering proof complete; router-wide DNS deferred
-- Next phase: Phase 5 Windows Server + Active Directory planning
+- Next phase: Phase 5 Windows Server + Active Directory lab build
 
 ## Architecture
 
@@ -32,11 +32,12 @@ flowchart TB
 ## Hardware
 
 - CPU: AMD Ryzen 7 3700X
-- RAM: 32 GB
+- RAM: 48 GB
 - GPU: Intel Arc A770 16 GB
 - Storage:
-  - SSD for VM and active services
-  - HDD planned for backups, ISOs, screenshots, and documentation
+  - 954 GB SSD for VM and active services
+  - 932 GB HDD planned for backups, ISOs, screenshots, and documentation
+  - 1.84 TB total storage, about 570 GB used at Phase 5 preflight
 - Host OS: Windows
 
 ## VM
@@ -280,7 +281,7 @@ It backs up:
 - Enable SSH key-only login after confirming key access.
 - Plan router-wide AdGuard DNS rollout only after the current one-device proof remains stable.
 - Investigate AdGuard DNS over Tailscale only after LAN testing is stable.
-- Plan Windows Server and Active Directory before installing any new VMs.
+- Build the Phase 5 Windows Server and Active Directory lab using the documented runbook.
 - Copy backups from VM storage to the HDD.
 - Add more services only after the foundation stays stable.
 
@@ -288,8 +289,8 @@ It backs up:
 
 - Phase 4 is complete. See [docs/phases/phase-4-summary.md](docs/phases/phase-4-summary.md), [docs/security-monitoring.md](docs/security-monitoring.md), and [docs/phase-4-checklist.md](docs/phase-4-checklist.md).
 - Later security expansion: install Wazuh only after a separate deployment decision. See [docs/wazuh-planning.md](docs/wazuh-planning.md) and [docs/phase-4-wazuh-security-monitoring.md](docs/phase-4-wazuh-security-monitoring.md).
-- Phase 5: Windows Server + Active Directory lab planning. See [docs/phase-5-active-directory-plan.md](docs/phase-5-active-directory-plan.md).
-- Supporting Phase 5 notes are also available in [docs/phase-5-windows-server-active-directory.md](docs/phase-5-windows-server-active-directory.md).
+- Phase 5: Windows Server + Active Directory lab build. Start with [docs/phase-5-active-directory-plan.md](docs/phase-5-active-directory-plan.md).
+- Supporting Phase 5 notes are available in [docs/phase-5-windows-server-active-directory.md](docs/phase-5-windows-server-active-directory.md).
 
 ## Resume Bullet Examples
 

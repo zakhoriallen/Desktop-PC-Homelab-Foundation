@@ -1,65 +1,51 @@
 # Phase 5: Windows Server And Active Directory Lab
 
-Goal: build a small Windows Server and Active Directory practice environment after the Linux/Docker homelab foundation is stable.
+This is the short supporting note for Phase 5. The main build plan and checklist are in [phase-5-active-directory-plan.md](phase-5-active-directory-plan.md).
 
 ## Status
 
-- Phase: planned
-- Do not deploy until Phase 4 planning is complete and VM resource capacity is reviewed.
+- Phase: ready to start
+- Phase 4 is complete.
+- Wazuh remains planned but not installed.
+- Router-wide AdGuard DNS remains deferred.
 
-## Objectives
+## Objective
 
-- Learn Windows Server administration.
-- Create a small Active Directory domain.
-- Practice users, groups, OUs, DNS, and Group Policy.
-- Understand Windows event logs and basic domain security.
-- Later connect Windows telemetry into security monitoring.
+Build a small private Windows Server and Active Directory practice environment after the Linux/Docker homelab foundation.
 
-## Proposed Architecture
+## Scope
 
-```text
-Windows Host
--> VirtualBox
-   |-> homelab-ubuntu
-   |   `-> Docker services
-   `-> Windows Server VM
-       `-> Active Directory Domain Services
-```
+- Windows Server VM
+- Active Directory Domain Services
+- DNS for the lab domain
+- OU, user, and group practice
+- Windows client VM
+- Domain join and domain login test
+- Simple Group Policy test
+- Windows Event Viewer review
 
-## VM Planning
+## Out Of Scope For Now
 
-Suggested starting resources:
+- Router-wide DNS changes
+- Public exposure of domain services
+- Real production devices joined to the domain
+- Wazuh Windows agent deployment
+- Azure AD / Entra ID integration
 
-- CPU: 2 cores
-- RAM: 4-6 GB
-- Disk: 80-120 GB
-- Network: bridged or isolated lab network, depending on safety goals
+## Starting Point
 
-## Preflight Checklist
+Begin with the preflight section in [phase-5-active-directory-plan.md](phase-5-active-directory-plan.md):
 
-- [ ] Confirm Windows Server ISO/licensing/evaluation path
-- [ ] Confirm available host RAM and disk space
-- [ ] Decide network mode
-- [ ] Create a backup/checkpoint before major changes
-- [ ] Document domain name choice
-- [ ] Do not reuse real passwords
+1. Confirm host RAM and disk space.
+2. Decide VirtualBox network mode.
+3. Download the Windows Server evaluation ISO.
+4. Create the Windows Server VM.
+5. Install AD DS and DNS only after the VM is stable.
 
-## Deployment Rules
+## Safety Rules
 
 - Keep the domain lab private.
-- Do not expose domain services to the public internet.
-- Use lab-only usernames and passwords.
-- Document everything without storing credentials.
-- Avoid changing the main home router DNS for AD until the lab design is clear.
-
-## Success Criteria
-
-- [ ] Windows Server VM installed
-- [ ] Static/private lab IP documented
-- [ ] AD DS installed
-- [ ] Domain created
-- [ ] Test user created
-- [ ] Test Windows client joined, if added
-- [ ] Basic GPO tested
-- [ ] Documentation and screenshots saved
-
+- Do not expose AD, DNS, LDAP, Kerberos, SMB, RDP, or WinRM to the public internet.
+- Do not use real personal passwords.
+- Do not commit credentials, license keys, tokens, private keys, `.env` files, or backup archives.
+- Use placeholders such as `DOMAIN_NAME`, `DC_IP`, `CLIENT_IP`, and `LAB_USERNAME`.
